@@ -21,6 +21,11 @@
       type: 'text',
     },
     {
+      name: 'category',
+      title: 'Category',
+      type: 'string',
+    },
+    {
       name: 'technologies',
       title: 'Technologies',
       type: 'array',
