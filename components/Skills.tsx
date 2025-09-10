@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { motion } from "framer-motion";
 import Skill from "./Skill";
 import { Skill as SkillType } from "../typing";
@@ -8,12 +8,16 @@ type Props = {
 
 function Skills({ skills }: Props) {
   return (
-    <motion.div className="relative h-screen flex flex-col text-center md:text-left xl:flex-row max-w-[2000px] xl:px-10 min-h-screen justify-center xl:space-y-0 mx-auto items-center">
-      <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl">
+    <motion.div
+      className="relative flex flex-col text-center md:text-left xl:flex-row 
+                 max-w-[2000px] xl:px-10 min-h-screen justify-center 
+                 xl:space-y-0 mx-auto items-center py-20"
+    >
+      <h3 className="absolute top-16 sm:top-20 uppercase tracking-[12px] sm:tracking-[20px] text-gray-500 text-xl sm:text-2xl">
         Skills
       </h3>
 
-      <h3 className="absolute top-36 uppercase tracking-[3px] text-gray-500 text-sm">
+      <h3 className="absolute top-28 sm:top-32 uppercase tracking-[2px] text-gray-500 text-xs sm:text-sm">
         Hover over a skill for current proficiency
       </h3>
 

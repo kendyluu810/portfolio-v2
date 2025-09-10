@@ -17,27 +17,29 @@ export default function Hero({ pageInfo }: Props) {
   });
 
   return (
-    <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden">
+    <div className="h-screen flex flex-col space-y-6 sm:space-y-8 items-center justify-center text-center overflow-hidden px-4">
       <BackgroundCircles />
 
-      <Image
-        className="rounded-full mx-auto object-cover"
-        src={urlFor(pageInfo?.heroImage).url()}
-        alt=""
-        width={150}
-        height={150}
-      />
+      <div className="relative w-28 h-28 sm:w-36 sm:h-36 md:w-44 md:h-44">
+        <Image
+          className="rounded-full mx-auto object-cover"
+          src={urlFor(pageInfo?.heroImage).url()}
+          alt={pageInfo?.name || "Hero Image"}
+          fill
+          priority
+        />
+      </div>
 
       <div className="z-20">
-        <h2 className="text-lg uppercase text-gray-400 pb-2 tracking-[10px] md:tracking-[15px] mx-2">
+        <h2 className="text-sm sm:text-base md:text-lg uppercase text-gray-400 pb-2 tracking-[6px] md:tracking-[12px]">
           {pageInfo?.role}
         </h2>
-        <h1 className="text-2xl md:text-4xl lg:text-6xl font-semibold px-10">
+        <h1 className="text-xl sm:text-3xl md:text-5xl font-semibold px-2 sm:px-10 leading-snug">
           <span>{text}</span>
           <Cursor cursorColor="#68B2A0" />
         </h1>
 
-        <div className="pt-24 -mb-20 space-x-2">
+        <div className="pt-10 sm:pt-16 -mb-20 space-x-2">
           <Link href="#about">
             <button className="heroButton">About</button>
           </Link>

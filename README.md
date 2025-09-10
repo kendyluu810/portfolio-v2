@@ -1,3 +1,56 @@
+# Portfolio v2
+
+A modern personal portfolio website built with Next.js, TypeScript, Tailwind CSS, and Sanity.io. Showcase your skills, experience, and projects in a visually appealing and responsive layout.
+
+## Features
+- Responsive design for all devices
+- Dynamic content management with Sanity.io
+- Sections: About, Skills, Projects, Work Experience, Contact
+- Easy to customize and extend
+
+## Technologies Used
+- [Next.js](https://nextjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Sanity.io](https://www.sanity.io/)
+
+## Getting Started
+
+### Prerequisites
+- Node.js (v16 or higher recommended)
+- npm or yarn
+
+### Installation
+1. Clone the repository:
+   ```sh
+git clone https://github.com/yourusername/portfolio-v2.git
+cd portfolio-v2
+```
+2. Install dependencies:
+   ```sh
+npm install
+```
+3. Set up Sanity.io:
+   - Go to the `pportfolio-v2` folder and follow the instructions in its README to set up your Sanity studio.
+
+### Running Locally
+```sh
+npm run dev
+```
+Open [http://localhost:3000](http://localhost:3000) to view the site.
+
+## Deployment
+You can deploy this project to Vercel, Netlify, or any platform that supports Next.js.
+
+## Contributing
+Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
+
+## License
+This project is open source and available under the [MIT License](LICENSE).
+
+## Contact
+For questions or feedback, reach out via the contact form on the website or email your@email.com.
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started

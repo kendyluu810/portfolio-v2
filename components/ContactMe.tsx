@@ -25,31 +25,31 @@ export default function ContactMe({ pageInfo }: Props) {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 2 }}
       id="contactme"
-      className="h-screen flex relative overflow-hidden flex-col text-white text-center md:flex-row max-w-full px-10 justify-evenly items-center "
+      className="min-h-screen flex flex-col text-white text-center px-6 md:px-10 justify-evenly items-center"
     >
-      <h3 className="absolute top-24 uppercase tracking-[10px] md:tracking-[15px] text-gray-500 text-xl md:text-2xl">
+      <h3 className="mt-10 uppercase tracking-[8px] md:tracking-[15px] text-gray-500 text-lg md:text-2xl">
         {"Let's Connect"}
       </h3>
-      <div className="flex flex-col space-y-4 md:space-y-5 lg:space-y-6 xl:space-y-6 2xl:space-y-10 sm:mt-10 md:mt-5 xl:mt-20">
-        <h4 className="text-xl lg:text-2xl 2xl:text-3xl font-semibold text-center md:mt-4">
+      <div className="flex flex-col space-y-6 w-full max-w-3xl mt-6">
+        <h4 className="text-lg sm:text-xl lg:text-2xl font-semibold text-center">
           I have got just what you need.{" "}
           <span className="decoration-darkGreen/50 underline">Lets talk.</span>
         </h4>
 
-        <div className="space-y-1 md:space-y-3 lg:space-y-3 xl:space-y-3 2xl:space-y-5">
-          <div className="flex items-center space-x-5 justify-center">
-            <PhoneIcon className="text-darkGreen h-7 w-7 animate-pulse" />
-            <p className="text-lg md:text-2xl lg:text-2xl">
+        <div className="space-y-4">
+          <div className="flex items-center space-x-3 justify-center">
+            <PhoneIcon className="text-darkGreen h-6 w-6 animate-pulse" />
+            <p className="text-base sm:text-lg md:text-xl">
               (+84) {pageInfo?.phoneNumber}
             </p>
           </div>
-          <div className="flex items-center space-x-5 justify-center">
-            <EnvelopeIcon className="text-darkGreen h-7 w-7 animate-pulse" />
-            <p className="text-lg md:text-2xl lg:text-2xl">{pageInfo?.email}</p>
+          <div className="flex items-center space-x-3 justify-center">
+            <EnvelopeIcon className="text-darkGreen h-6 w-6 animate-pulse" />
+            <p className="text-base sm:text-lg md:text-xl">{pageInfo?.email}</p>
           </div>
-          <div className="flex items-center space-x-5 justify-center">
-            <MapPinIcon className="text-darkGreen h-7 w-7 animate-pulse" />
-            <p className="text-lg md:text-2xl lg:text-2xl">
+          <div className="flex items-center space-x-3 justify-center">
+            <MapPinIcon className="text-darkGreen h-6 w-6 animate-pulse" />
+            <p className="text-base sm:text-lg md:text-xl">
               {pageInfo?.address}
             </p>
           </div>
@@ -59,7 +59,7 @@ export default function ContactMe({ pageInfo }: Props) {
           onSubmit={handleSubmit(onSubmit)}
           className=" flex flex-col space-y-2 md:w-fit mx-auto "
         >
-          <div className="flex md:flex-row flex-col md:space-y-0 space-y-2 md:space-x-2">
+          <div className="flex flex-col md:flex-row md:space-x-3 space-y-3 md:space-y-0">
             <input
               {...register("name")}
               placeholder="Name"
@@ -85,8 +85,7 @@ export default function ContactMe({ pageInfo }: Props) {
             placeholder="Message"
             className="contactInput text-center"
           />
-          <button className="bg-[#f7ab0a] py-5 px-10 rounded-md text-black font-sans">
-            {" "}
+          <button className="bg-[#f7ab0a] py-4 px-8 rounded-md text-black font-semibold hover:bg-[#e89900] transition-colors duration-300">
             Submit
           </button>
         </form>

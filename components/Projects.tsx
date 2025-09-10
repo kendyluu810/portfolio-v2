@@ -52,7 +52,7 @@ function Projects({ projects }: Props) {
         ))}
         <button
           onClick={resetSort}
-          className="bg-gray-500 hover:bg-gray-700 text-white px-4 py-2 rounded transition-colors duration-300"
+          className="flex-shrink-0 bg-gray-500 hover:bg-gray-700 text-white px-3 py-1 md:px-4 md:py-2 rounded text-sm md:text-base transition-colors duration-300"
         >
           All
         </button>
@@ -62,7 +62,7 @@ function Projects({ projects }: Props) {
         {displayedProjects?.map((project, i) => (
           <div
             key={project?._id}
-            className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen"
+            className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-6 sm:p-10 md:p-20 lg:p-32 h-screen"
           >
             <motion.img
               initial={{ opacity: 0, y: -300 }}
@@ -70,28 +70,28 @@ function Projects({ projects }: Props) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               src={project?.image ? urlFor(project.image).url() : undefined}
-              alt=""
-              className="w-[150px] h-[150px] md:w-[350px] md:h-[350px] lg:w-[500px] lg:h-[500px] object-contain"
+              alt={project?.title}
+              className="w-[120px] h-[120px] sm:w-[200px] sm:h-[200px] md:w-[300px] md:h-[300px] lg:w-[450px] lg:h-[450px] object-contain"
             />
 
             <div className="space-y-10 px-0 md:px-10 max-w-6xl">
-              <h4 className="text-4xl font-semibold text-center">
+              <h4 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-center">
                 <span className="underline decoration-[#F7AB0A]/50">
                   Project {i + 1} of {projects.length}:
                 </span>{" "}
                 {project?.title}
               </h4>
-              <div className="flex items-center space-x-2 justify-center">
+              <div className="flex flex-wrap items-center gap-2 justify-center">
                 {project?.technologies.map((technology) => (
                   <img
                     key={technology._id}
                     src={urlFor(technology.image).url()}
-                    alt=""
+                    alt={technology.title}
                     className="w-10 h-10"
                   />
                 ))}
               </div>
-              <p className="text-lg text-center md:text-left">
+              <p className="text-sm sm:text-base md:text-lg text-center md:text-left">
                 {project?.summary}
               </p>
               <div className="flex items-center space-x-2 justify-center">

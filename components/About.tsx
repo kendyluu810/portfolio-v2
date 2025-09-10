@@ -11,9 +11,11 @@ export default function About({ pageInfo }: Props) {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
-      className="flex flex-col relative h-screen text-center md:text-left md:flex-row max-w-7xl px-10 justify-evenly mx-auto items-center"
+      className="flex flex-col relative min-h-screen text-center 
+                 md:text-left md:flex-row max-w-7xl px-4 sm:px-8 md:px-10 
+                 justify-evenly mx-auto items-center"
     >
-      <p className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-xl md:text-2xl">
+      <p className="absolute top-20 uppercase tracking-[12px] sm:tracking-[20px] text-gray-500 text-lg sm:text-xl md:text-2xl">
         About
       </p>
 
@@ -30,17 +32,19 @@ export default function About({ pageInfo }: Props) {
           opacity: 1,
         }}
         viewport={{ once: true }}
-        className=" -mb-24 md:mb-0 flex-shrink-0 w-52 h-52 rounded-full object-cover md:rounded-lg md:w-64 md:h-64 xl:w-[400px] xl:h-[400px]"
+        className="mt-20 sm:mt-24 md:mt-0 flex-shrink-0 
+                   w-32 h-32 sm:w-44 sm:h-44 md:w-64 md:h-64 
+                   xl:w-[400px] xl:h-[400px] rounded-full md:rounded-lg object-cover"
         src={urlFor(pageInfo?.profilePic).url()}
-        alt=""
+        alt={pageInfo?.name || "Profile"}
       />
-      <div className="space-y-5 md:space-y-10 px-0 md:px-10 md:mt-20">
-        <p className="text-xl md:text-3xl xl:text-4xl font-semibold">
+      <div className="mt-10 space-y-4 sm:space-y-6 md:space-y-10 px-2 md:px-10">
+        <p className="text-lg sm:text-xl md:text-3xl xl:text-4xl font-semibold">
           Here is a{" "}
           <span className=" underline decoration-darkGreen/50">little</span>{" "}
           background
         </p>
-        <p className="text-sm md:text-lg lg:text-lg text-justify">
+        <p className="text-sm sm:text-base md:text-lg text-justify leading-relaxed">
           {pageInfo?.backgroundInformation}
         </p>
       </div>

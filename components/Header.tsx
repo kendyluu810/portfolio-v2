@@ -10,7 +10,10 @@ type Props = {
 
 export default function Header({ socials }: Props) {
   return (
-    <header className="sticky top-0 p-5 flex items-start justify-between max-w-7xl mx-auto z-20 xl:items-center">
+    <header
+      className="sticky top-0 px-4 sm:px-6 py-3 flex items-center justify-between 
+      max-w-7xl mx-auto z-20 bg-[rgb(36,36,36)]/80 backdrop-blur-md"
+    >
       <motion.div
         initial={{
           x: -500,
@@ -25,7 +28,7 @@ export default function Header({ socials }: Props) {
         transition={{
           duration: 1.5,
         }}
-        className=" flex flex-row items-center "
+        className="flex flex-row items-center space-x-2 sm:space-x-3"
       >
         {/* React social icons */}
         {socials.map((social) => (
@@ -34,6 +37,7 @@ export default function Header({ socials }: Props) {
             url={social.url}
             fgColor="gray"
             bgColor="transparent"
+            // style={{ height: 30, width: 30 }}
           />
         ))}
       </motion.div>
@@ -53,7 +57,7 @@ export default function Header({ socials }: Props) {
           transition={{
             duration: 1.5,
           }}
-          className="flex flex-row items-center text-gray-300 cursor-pointer"
+          className="flex flex-row items-center text-gray-300 cursor-pointer space-x-2"
         >
           <SocialIcon
             className="cursor-pointer"
@@ -61,7 +65,7 @@ export default function Header({ socials }: Props) {
             fgColor="grey"
             bgColor="transparent"
           />
-          <p className="uppercase hidden md:inline-flex text-sm text-gray-400">
+          <p className="hidden md:inline-flex uppercase text-xs sm:text-sm text-gray-400">
             Get in touch
           </p>
         </motion.div>
